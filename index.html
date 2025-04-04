@@ -1,170 +1,204 @@
 <!DOCTYPE html>
-<html>
-    <head>
-        <title>
-            K_J Shopping Cart.com
-        </title>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KJ Shopping Cart</title>
     <style>
-        header{
+        * {
+            margin: 0;
+            padding: 0;
             box-sizing: border-box;
-            padding-top: 0;
-            margin-top: 0;
+        }
+        body {
+            background-color: white;
+            text-align: center;
+            font-family: Arial, sans-serif;
+        }
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 30px;
             background: rgb(17, 17, 49);
             color: white;
         }
-        form{
-            background: rgb(9, 9, 14);
-            padding: 10px;
-
-        }
-        body{
-            background :thick white;
-           text-align: center;
-        }
-        nav{
+        nav {
             position: sticky;
             top: 0;
-            margin: 20px;
-            padding: 10px;
             background: rgb(40, 52, 63);
-            font-size: 25px;
-            
+            font-size: 20px;
+            padding: 10px;
+            z-index: 1000;
         }
-        nav a{
+        nav a {
             color: white;
             text-decoration: none;
-            padding : 10px 40px;
+            padding: 10px 20px;
             display: inline-block;
             border: 2px solid black;
             box-shadow: 0 0 10px black;
+            transition: background 0.3s, color 0.3s;
         }
-        nav a:hover{
+        nav a:hover {
             background: goldenrod;
             color: black;
         }
-        figure{
+        form {
+            display: flex;
+            align-items: center;
+        }
+        form select,
+        form input,
+        form button {
+            padding: 8px;
+            border: 1px solid gray;
+            border-radius: 5px;
+        }
+        form input {
+            width: 250px;
+        }
+        form button {
+            background-color: goldenrod;
+            color: white;
+            border: none;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+        form button:hover {
+            background: darkgoldenrod;
+        }
+        .product-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 15px;
+            margin-top: 20px;
+        }
+        figure {
             width: 300px;
             padding: 10px;
-            display: inline-block;
-            margin: 10px;
             background: rgba(69, 127, 69, 0.27);
             box-shadow: 0 0 10px black;
+            text-align: center;
+            transition: transform 0.2s;
         }
-        figure img:hover{
-            transform: scale(1.1);
-            background: white;
+        figure img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
             cursor: pointer;
-            transition: 0.2s;
+            transition: transform 0.2s;
         }
-        figure figcaption{
-            box-shadow: 0 0 10px black;
-            padding: 15px;
-            font-size: 20px;
+        figure img:hover {
+            transform: scale(1.1);
+        }
+        figcaption {
+            padding: 10px;
+            font-size: 18px;
             font-weight: bold;
-            color: #ffffff;
+            background: black;
+            color: white;
+            box-shadow: 0 0 10px black;
+            transition: transform 0.2s, background 0.3s, color 0.3s;
         }
-        figure figcaption:hover{
+        figcaption:hover {
             transform: scale(1.1);
             background: white;
             color: black;
-            cursor: pointer;
-            transition: 0.2s;
-        } 
+        }
     </style>
-    </head>
-        <header style="display: flex; justify-content: space-between; align-items: center; padding: 10px 30px; background: rgb(17, 17, 49); color: white;">
-            <h1 style="margin: 0; font-size: 1.8rem;">KJ Shopping.Com - made in india</h1>
-            <form action="/search" method="get" style="display: flex; align-items: center;">
-                <select style="padding: 8px; border: 1px solid gray; border-radius: 5px; margin-right: 10px;">
-                    <option value="all">All</option>
-                    <option value="books">Books</option>
-                    <option value="electronics">Electronics</option>
-                    <option value="fashion">Fashion</option>
-                </select>
-                <input type="text"  placeholder="Search..." style="padding: 8px; width: 300px; border: 1px solid gray; border-radius: 5px; margin-right: 10px;">
-                <button type="submit" style="padding: 8px 15px; background-color: goldenrod; border: none; color: white; border-radius: 5px; cursor: pointer;">
-                    Search
-                </button>
-            </form>
-        </header>
+</head>
+<body>
+    <header>
+        <h1>KJ Shopping.com - Made in India</h1>
+        <form action="/search" method="get">
+            <select name="category">
+                <option value="all">All</option>
+                <option value="books">Books</option>
+                <option value="electronics">Electronics</option>
+                <option value="fashion">Fashion</option>
+            </select>
+            <input type="text" name="query" placeholder="Search...">
+            <button type="submit">Search</button>
+        </form>
+    </header>
 
-    <body>
-        
-        <nav>
-            <a href="">Home</a>
-            <a href="Cart.html">Cart</a>
-            <a href="Orders.html">Orders</a>
-            <a href="mobile.html" target="_blank">Mobiles</a>
-            <a href="Laptops.html" target="_blank">Laptops</a>
-            <a href="TV.html" target="_blank">TV's</a>
-            <a href="AC.html" target="_blank">Air Conditioners</a>
-        </nav>
+    <nav>
+        <a href="#">Home</a>
+        <a href="Cart.html">Cart</a>
+        <a href="Orders.html">Orders</a>
+        <a href="mobile.html" target="_blank">Mobiles</a>
+        <a href="Laptops.html" target="_blank">Laptops</a>
+        <a href="TV.html" target="_blank">TVs</a>
+        <a href="AC.html" target="_blank">Air Conditioners</a>
+    </nav>
+
+    <div class="product-container">
         <figure>
-            <img src="Screenshot 2025-03-31 102431.png" width="300px" height="200px" align="center">
+            <img src="Screenshot 2025-03-31 102431.png" alt="Books">
             <figcaption>Latest Books</figcaption>
         </figure>
         <figure>
-            <img src="Screenshot 2025-03-31 102610.png" width="300px" height="200px" align="center">
+            <img src="Screenshot 2025-03-31 102610.png" alt="Electronics">
             <figcaption>Latest Electronics</figcaption>
         </figure>
         <figure>
-            <img src="Screenshot 2025-03-31 102733.png" width="300px" height="200px" align="center">
+            <img src="Screenshot 2025-03-31 102733.png" alt="Releases">
             <figcaption>Latest Releases</figcaption>
         </figure>
         <figure>
-            <img src="Screenshot 2025-03-31 102818.png" width="300px" height="200px" align="center">
+            <img src="Screenshot 2025-03-31 102818.png" alt="Watches">
             <figcaption>Watches</figcaption>
         </figure>
-        
         <figure>
-            <img src="Screenshot 2025-03-31 100855.png" width="300px" height="200px" align="center">
+            <img src="Screenshot 2025-03-31 100855.png" alt="Grocery">
             <figcaption>Grocery Store</figcaption>
         </figure>
         <figure>
-            <img src="Screenshot 2025-03-31 101054.png" width="300px" height="200px" align="center">
+            <img src="Screenshot 2025-03-31 101054.png" alt="Fashion">
             <figcaption>Fashion</figcaption>
         </figure>
         <figure>
-            <img src="Screenshot 2025-03-31 101213.png" width="300px" height="200px" align="center">
+            <img src="Screenshot 2025-03-31 101213.png" alt="Medicals">
             <figcaption>Medicals</figcaption>
         </figure>
         <figure>
-            <img src="Screenshot 2025-03-31 103333.png"width="300px" height="200px" align="center"></a>
+            <img src="Screenshot 2025-03-31 103333.png" alt="Mobiles">
             <figcaption>Latest Mobiles</figcaption>
         </figure>
         <figure>
-            <img src="Screenshot 2025-03-29 221304.png" width="300px" height="200px" align="center">
-            <figcaption>Latest TV's</figcaption>
+            <img src="Screenshot 2025-03-29 221304.png" alt="TVs">
+            <figcaption>Latest TVs</figcaption>
         </figure>
         <figure>
-            <img src="Screenshot 2025-03-31 103554.png" width="300px" height="200px" align="center">
+            <img src="Screenshot 2025-03-31 103554.png" alt="Laptops">
             <figcaption>Latest Laptops</figcaption>
         </figure>
         <figure>
-            <img src="Screenshot 2025-03-29 221600.png" width="300px" height="200px" align="center">
+            <img src="Screenshot 2025-03-29 221600.png" alt="AC">
             <figcaption>Latest Air Conditioners</figcaption>
         </figure>
         <figure>
-            <img src="Screenshot 2025-03-31 101306.png" width="300px" height="200px" align="center">
+            <img src="Screenshot 2025-03-31 101306.png" alt="Toys">
             <figcaption>Kids Toys</figcaption>
         </figure>
         <figure>
-            <img src="Screenshot 2025-03-31 101404.png" width="300px" height="200px" align="center">
-            <figcaption>Home Decors</figcaption>
+            <img src="Screenshot 2025-03-31 101404.png" alt="Home Decor">
+            <figcaption>Home Decor</figcaption>
         </figure>
         <figure>
-            <img src="Screenshot 2025-03-31 101427.png" width="300px" height="200px" align="center">
+            <img src="Screenshot 2025-03-31 101427.png" alt="Kitchen">
             <figcaption>Kitchen Essentials</figcaption>
         </figure>
         <figure>
-            <img src="Screenshot 2025-03-31 101451.png" width="300px" height="200px" align="center">
+            <img src="Screenshot 2025-03-31 101451.png" alt="Games">
             <figcaption>Toys and Games</figcaption>
         </figure>
         <figure>
-            <img src="Screenshot 2025-03-31 102124.png" width="300px" height="200px" align="center">
+            <img src="Screenshot 2025-03-31 102124.png" alt="Pet Care">
             <figcaption>Pet Care</figcaption>
         </figure>
-       
-    </body>
-    
+    </div>
+</body>
 </html>
